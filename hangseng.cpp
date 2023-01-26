@@ -74,23 +74,23 @@ class IndexData {
 };
 
 int main() {
-    vector<vector<string>> hang_seng_index_csv_data = get_csv_data("hang-seng-composite-index-historical-data.csv");
+    vector<vector<string>> hang_seng_csv_data = get_csv_data("hang-seng-composite-index-historical-data.csv");
 
-    //display_csv_data(hang_seng_index_csv_data);
+    //display_csv_data(hang_seng_csv_data);
 
-    IndexData hang_seng_index_data = IndexData(hang_seng_index_csv_data);
+    IndexData hang_seng = IndexData(hang_seng_csv_data);
 
-    hang_seng_index_data.print();
+    hang_seng.print();
 
-    cout << "first year: " << hang_seng_index_data.first_year << endl;
-    cout << "last year: " << hang_seng_index_data.last_year << endl;
+    cout << "first year: " << hang_seng.first_year << endl;
+    cout << "last year: " << hang_seng.last_year << endl;
 
     cout << "yoy change:" << endl;
-    for (int i=0;i<hang_seng_index_data.year_over_year_change.size();i++) {
-        cout << hang_seng_index_data.first_year + i << ": " << hang_seng_index_data.year_over_year_change[i] << "%" << endl;
+    for (int i=0;i<hang_seng.year_over_year_change.size();i++) {
+        cout << hang_seng.first_year + i << ": " << hang_seng.year_over_year_change[i] << "%" << endl;
     }
 
-    cout << "average yearly return: " << hang_seng_index_data.average_yearly_return << "%" << endl;
+    cout << "average yearly return: " << hang_seng.average_yearly_return << "%" << endl;
 
     return 0;
 }
